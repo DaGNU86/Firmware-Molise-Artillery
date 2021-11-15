@@ -90,7 +90,7 @@
 
 /*** Section 1 Artillery Printer ***/
 
-//#define GENIUS
+#define GENIUS
 //#define X1
 
 /*** Section 2 Board Type ***/
@@ -99,7 +99,7 @@
 //#define MKSGENLV21      // Choose this if you are using MKS GEN L V2.1
 //#define SKR13           // Choose this if you are using BigTreeTech SKR 1.3
 //#define SKR14           // Choose this if you are using BigTreeTech SKR 1.4
-//#define SKR14T          // Choose this if you are using BigTreeTech SKR 1.4 Turbo
+#define SKR14T          // Choose this if you are using BigTreeTech SKR 1.4 Turbo
 //#define MKSSGENLV1      // Choose this if you are using MKS SGEN L V1
 //#define MKSSGENLV2      // Choose this if you are using MKS SGEN L V2
 //#define MKSROBINNANOV3  // Choose this if you are using MKS ROBIN NANO V3
@@ -119,7 +119,7 @@
 /*** Section 3 Extruder Type ***/
 
 //#define TITAN       // Stock Extruder
-//#define BMG         // Choose this if you are using BMG/BMG Wind
+#define BMG         // Choose this if you are using BMG/BMG Wind
 //#define HEMERA      // Choose this if you are using HEMERA
 //#define MATRIX      // Choose this if you are using MATRIX
 
@@ -130,11 +130,11 @@
 //#define TMC_2209_STA    // Standalone Mode
 //#define LV_8729
 //#define TMC_2208        // UART Mode
-//#define TMC_2209        // UART Mode
+#define TMC_2209        // UART Mode
 
 /*** Section 5 Bed Leveling ***/
 
-//#define BLTOUCH      //uncomment if you use a BLTouch
+#define BLTOUCH      //uncomment if you use a BLTouch
   #ifdef BLTOUCH
     #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
     #define Z_MIN_PROBE_REPEATABILITY_TEST
@@ -142,9 +142,9 @@
   //#define NOZZLE_TO_PROBE_OFFSET { -17, -42, 0 }  //Offset preset for this fanduct with 5015 Fan on Thingiverse : https://www.thingiverse.com/thing:4741530
   //#define NOZZLE_TO_PROBE_OFFSET { 56, -34, 0 }   //Offset preset for this fanduct with 5015 Fan on Thingiverse : https://www.thingiverse.com/thing:4548854
   //#define NOZZLE_TO_PROBE_OFFSET { 36, -38, 0 }   //Offset preset for BMG Wind for this fanduct : Sidewinder X1 Waggster Mod BLTouch with improved Fan Duct  by 3dprintbeginnercom on Thingiverse: https://www.thingiverse.com/thing:3972011
-  #define WAGGSTER_MOD_WIRING                     //Comment if you don't use Waggster mode on Sidewinder (Guero Loco method by exemple) Mod needed for Genius standard wiring
+  //#define WAGGSTER_MOD_WIRING                     //Comment if you don't use Waggster mode on Sidewinder (Guero Loco method by exemple) Mod needed for Genius standard wiring
   //#define Z_STEPPER_AUTO_ALIGN                    //Uncomment if you want to use Z_STEPPER_AUTO_ALIGN, be carefull, you need to remove the belt from the Z axes for this
-  //#define DISABLE_LED                             // Uncomment to disable LED, some users report compatibilty issues with BL Touch and LED enabled
+ // #define DISABLE_LED                             // Uncomment to disable LED, some users report compatibilty issues with BL Touch and LED enabled
   #endif
 
 //#define ZMIN_SENSOR_AS_PROBE                      //uncomment to use Z min as Probe for bed leveling (incompatible with BLTouch)
@@ -180,7 +180,7 @@
 
 /*** Section 7 Sensorless Homing XY ***/
 
-//#define SENSHOME                                  // Active sensorless homing ONLY for TMC 2208 UART and 2009 UART with SKR 1.3 (extra wiring needed) and SKR 1.4 (no extra wiring needed)
+#define SENSHOME                                  // Active sensorless homing ONLY for TMC 2208 UART and 2009 UART with SKR 1.3 (extra wiring needed) and SKR 1.4 (no extra wiring needed)
 
 
 
@@ -226,7 +226,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "Molise 2.4" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "DaGNU" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -241,7 +241,7 @@
  */
 
 // Show the Marlin bootscreen on startup. ** ENABLE FOR PRODUCTION **
-#ifdef GraphicalLCD
+//#ifdef GraphicalLCD
 #define SHOW_BOOTSCREEN
 
 // Show the bitmap in Marlin/_Bootscreen.h on startup.
@@ -249,7 +249,7 @@
 
 // Show the bitmap in Marlin/_Statusscreen.h on the status screen.
 //#define CUSTOM_STATUS_SCREEN_IMAGE
-#endif
+
 // @section machine
 
 /**
@@ -1154,7 +1154,7 @@
  *
  * :[2,3,4,5,6,7]
  */
-#define ENDSTOP_NOISE_THRESHOLD 2
+//#define ENDSTOP_NOISE_THRESHOLD 2
 
 // Check for stuck or disconnected endstops during homing moves.
 //#define DETECT_BROKEN_ENDSTOP
@@ -1299,10 +1299,10 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1754,7 +1754,7 @@
 #if ENABLED(MIN_SOFTWARE_ENDSTOPS)
   #define MIN_SOFTWARE_ENDSTOP_X
   #define MIN_SOFTWARE_ENDSTOP_Y
-  #define MIN_SOFTWARE_ENDSTOP_Z
+  //#define MIN_SOFTWARE_ENDSTOP_Z
   #define MIN_SOFTWARE_ENDSTOP_I
   #define MIN_SOFTWARE_ENDSTOP_J
   #define MIN_SOFTWARE_ENDSTOP_K
@@ -1979,7 +1979,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 5
+  #define GRID_MAX_POINTS_X 3
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -2751,9 +2751,9 @@
 // RepRapDiscount FULL GRAPHIC Smart Controller
 // https://reprap.org/wiki/RepRapDiscount_Full_Graphic_Smart_Controller
 //
-#if ENABLED(GraphicalLCD) 
-  #define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
-#endif
+//#if ENABLED(GraphicalLCD) 
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER
+//#endif
 
 //
 // K.3D Full Graphic Smart Controller
